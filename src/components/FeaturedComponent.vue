@@ -1,4 +1,5 @@
 <template>
+  <section class="featured">
     <div>
         <span class="mdi mdi-truck"></span>
         <h2>Frete grátis para SC</h2>
@@ -11,6 +12,7 @@
         <span class="mdi mdi-book-open-page-variant"></span>
         <h2>Mais vendidos</h2>
     </div>
+  </section>
 </template>
 
 <style scoped>

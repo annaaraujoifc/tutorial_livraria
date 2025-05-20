@@ -1,4 +1,5 @@
 <template>
+  <section class="hero">
     <div class="hero-content">
       <h3 class="outlined">Livro destaque</h3>
       <h2>Noc Ognia</h2>
@@ -14,12 +15,11 @@
       <button>Acessar página do livro</button>
     </div>
     <div class="hero-image">
-      <img src="../public/hero.png" alt="Hero Image" />
+      <img src="/hero.png" alt="Hero Image" />
     </div>
+  </section>
 </template>
 <style scoped>
-
-
 .hero {
   display: flex;
   justify-content: space-between;
