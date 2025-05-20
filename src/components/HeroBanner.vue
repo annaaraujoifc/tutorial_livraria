@@ -1,25 +1,28 @@
 <template>
-  <section class="hero">
-    <div class="hero-content">
-      <h3 class="outlined">Livro destaque</h3>
-      <h2>Noc Ognia</h2>
-      <p>
-        Noc ognia é um romance de Erich-Emmanuel Schmitt, que narra a história
-        de um homem que vive em um mundo onde as pessoas não podem mais sonhar.
-        O livro é uma reflexão sobre a importância dos sonhos e da imaginação na
-        vida humana. Erich-Emmanuel Schmitt é um autor francês conhecido por
-        suas obras que exploram temas filosóficos e existenciais. Ele é um dos
-        autores mais traduzidos da França e suas obras têm sido amplamente
-        elogiadas pela crítica.
-      </p>
-      <button>Acessar página do livro</button>
-    </div>
-    <div class="hero-image">
-      <img src="/hero.png" alt="Hero Image" />
-    </div>
-  </section>
+
+<section class="hero">
+      <div class="hero-content">
+        <h3 class="outlined">Livro destaque</h3>
+        <h2>Noc Ognia</h2>
+        <p>
+          Noc ognia é um romance de Erich-Emmanuel Schmitt, que narra a história de um homem que
+          vive em um mundo onde as pessoas não podem mais sonhar. O livro é uma reflexão sobre a
+          importância dos sonhos e da imaginação na vida humana. Erich-Emmanuel Schmitt é um autor
+          francês conhecido por suas obras que exploram temas filosóficos e existenciais. Ele é um
+          dos autores mais traduzidos da França e suas obras têm sido amplamente elogiadas pela
+          crítica.
+        </p>
+        <button>Acessar página do livro</button>
+      </div>
+      <div class="hero-image">
+        <img src="/hero.png" alt="Hero Image" />
+      </div>
+    </section>
+   
 </template>
+
 <style scoped>
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -71,4 +74,5 @@
     }
   }
 }
+
 </style>
