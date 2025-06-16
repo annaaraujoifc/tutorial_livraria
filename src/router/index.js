@@ -1,5 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+
+import HomeView from '@/views/HomeView.vue'
 
 const routes = [
   {
@@ -12,11 +13,17 @@ const routes = [
     name: 'Team',
     component: () => import('@/views/TeamView.vue'),
   },
-];
+  {
+    path: '/livro/:id',
+    name: 'Book',
+    component: () => import('@/views/BookView.vue'),
+    props: true,
+  },
+]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-});
+})
 
-export default router;
+export default router

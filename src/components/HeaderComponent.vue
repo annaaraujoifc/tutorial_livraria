@@ -1,6 +1,8 @@
 <script setup>
-    import { useCartStore } from '@/stores/cart'
-    const cartStore = useCartStore()
+import { useBooksStore } from '../../stores/books';
+import { useCartStore } from '../../stores/cart';
+const cartStore = useCartStore()
+const bookStore = useBooksStore()
 </script>
 
 <template>
@@ -8,23 +10,23 @@
         <nav>
             <h1>
                 <RouterLink to="/">
-                IFbooks
-                <span class="logo-title"> Apreço a livros </span>
+                    IFbooks
+                    <span class="logo-title"> Apreço a livros </span>
                 </RouterLink>
             </h1>
             <div class="search-wrapper">
-                <input type="text" class="search" placeholder="Buscar..." />
+                <input type="text" class="search" v-model="bookStore.filter" placeholder="Buscar..." />
             </div>
             <ul>
                 <li>Termos</li>
-                <li><RouterLink to="/equipe">Equipe</RouterLink></li>
+                <li>
+                    <RouterLink to="/equipe">Equipe</RouterLink>
+                </li>
                 <li>Envio</li>
                 <li>Devoluções</li>
             </ul>
             <ul class="icons">
-                <li @click="cartStore.showCart = !cartStore.showCart">
-                <span class="mdi mdi-cart"></span>
-                </li>
+                <li @click="cartStore.showCart = !cartStore.showCart"><span class="mdi mdi-cart"></span></li>
                 <li><span class="mdi mdi-heart"></span></li>
                 <li><span class="mdi mdi-account"></span></li>
             </ul>
@@ -42,7 +44,7 @@ header nav {
 
     & a {
         text-decoration: none;
-        color: #000;
+        color: rgb(44, 62, 80);
     }
 
     & h1 {
@@ -97,7 +99,8 @@ header nav {
     }
 
     & .search-wrapper::before {
-        content: '󰍉'; /* Code glyph para mdi-magnify */
+        content: '󰍉';
+        /* Code glyph para mdi-magnify */
         font-family: 'Material Design Icons';
         font-size: 1.2rem;
         position: absolute;

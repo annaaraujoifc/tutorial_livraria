@@ -1,5 +1,5 @@
-import { ref } from 'vue';
-import { defineStore } from 'pinia';
+import { computed, ref } from 'vue'
+import { defineStore } from 'pinia'
 
 export const useBooksStore = defineStore('books', () => {
   const books = ref([
@@ -59,7 +59,19 @@ export const useBooksStore = defineStore('books', () => {
       price: 15.81,
       author: 'Cecília Meireles',
     },
-  ]);
+  ])
+  const filter = ref('')
 
-  return { books };
-});
+  function getBookById(id) {
+    return books.value.find((book) => book.id == id)
+  }
+
+  const listBooks = computed(() => {
+    const filteredBooks = books.value.filter((book) =>
+      book.title.toLowerCase().includes(filter.value.toLowerCase()),
+    )
+    return filteredBooks
+  })
+
+  return { filter, listBooks, getBookById }
+})
